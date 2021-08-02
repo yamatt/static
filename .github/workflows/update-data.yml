@@ -1,0 +1,27 @@
+---
+name: Find if streams have moved and update them
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-20.04
+    steps:
+        uses: actions/checkout@v2
+      - name: Setup Python3
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+      - name: Make dist dirs
+        run: mkdir -p data
+      - name: Install deps
+      - name: Find latest audio streams
+      - name: Update file
+      - name: Add latest files to public branch
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updating data
+          file_pattern: data
+          branch: public
