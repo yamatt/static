@@ -25,5 +25,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Updating JavaScript package
-          file_pattern: index.html main.css main.js
+          file_pattern: index.html main.css main.js data/*
           branch: public
