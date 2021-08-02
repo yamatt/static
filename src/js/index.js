@@ -1,9 +1,9 @@
 const bgVideo = document.getElementById("bg-video");
 const player  = document.getElementById("player");
 
-const video_urls = new URL("backgrounds.json")
+const video_url = "backgrounds.json"
 
-fetch(video_urls)
+fetch(video_url)
   .then(function(response) {
     if (!response.ok) {
     throw new Error("HTTP error, status = " + response.status);
