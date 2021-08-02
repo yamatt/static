@@ -11,8 +11,8 @@ fetch(video_urls)
    return response.json();
  })
  .then(function(video_urls) {
-     bgVideo.setAttribute("src", video_urls[Math.floor(Math.random() * video_urls.length)]['url'];);
-     bgVideo.playbackRate = 0.5;
+     document.getElementById("bg-video").setAttribute("src", video_urls[Math.floor(Math.random() * video_urls.length)]['url'];);
+     document.getElementById("bg-video").playbackRate = 0.5;
  })
  .catch(function(error) {
    console.log(error.message);
