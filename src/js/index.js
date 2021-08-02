@@ -1,7 +1,7 @@
 const bgVideo = document.getElementById("bg-video");
 const player  = document.getElementById("player");
 
-const video_url = "backgrounds.json"
+const video_url = "backgrounds.json";
 
 fetch(video_url)
   .then(function(response) {

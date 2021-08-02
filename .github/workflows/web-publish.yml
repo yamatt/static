@@ -33,6 +33,7 @@ jobs:
           cp main/src/css/main.css public
           cp main/src/data/backgrounds.json public
           cp main/src/data/streams.json public
+          cp main/dist/main.js public
       - name: Commit back updated files to public branch
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
