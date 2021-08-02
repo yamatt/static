@@ -27,4 +27,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: public
           commit-message: Updating static webpage
-          files: index.html main.css main.js data/*
+          files: index.html main.css main.js backgrounds.json streams.json
