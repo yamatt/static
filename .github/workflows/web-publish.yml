@@ -22,7 +22,7 @@ jobs:
           cp src/data/backgrounds.json .
           cp src/data/streams.json .
       - name: Commit back updated files to public branch
-        uses: actions-x/commit@v2.8
+        uses: actions-x/commit@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: public
