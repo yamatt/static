@@ -22,10 +22,9 @@ jobs:
           cp src/data/backgrounds.json .
           cp src/data/streams.json .
       - name: Commit back updated files to public branch
-        uses: actions-x/commit@v2
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: public
           commit-message: Updating static webpage
           files: index.html main.css main.js backgrounds.json streams.json
-          force: true
