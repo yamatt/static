@@ -1,0 +1,29 @@
+---
+name: Build static website
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: Install webpack
+        run: npm install
+      - name: Package libraries
+        run: webpack
+      - name: Copy files to right location
+        run: |
+          cp src/html/index.html .
+          cp src/css/main.css .
+          cp src/data/backgrounds.json .
+          cp src/data/streams.json .
+      - name: Commit back updated files to public branch
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: public
+          commit_message: Updating static webpage
+          file_pattern: index.html main.css main.js backgrounds.json streams.json
