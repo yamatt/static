@@ -24,6 +24,6 @@ jobs:
       - name: Commit back dist library to repository
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Updating JavaScript package
+          commit_message: Updating static webpage
           file_pattern: index.html main.css main.js data/*
           branch: public
