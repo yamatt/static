@@ -1,9 +1,9 @@
 ---
-name: Build website
+name: Build static website
 on: push
 
 jobs:
-  webpack:
+  build:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
