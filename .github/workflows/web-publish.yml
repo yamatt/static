@@ -26,4 +26,4 @@ jobs:
         with:
           branch: public
           commit_message: Updating static webpage
-          files: index.html main.css main.js backgrounds.json streams.json
+          file_pattern: index.html main.css main.js backgrounds.json streams.json
