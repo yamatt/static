@@ -9,6 +9,10 @@ body {
   color: #fff;
 }
 
+a {
+  color: #fff;
+}
+
 #background-video {
   object-fit: cover;
   width: 100vw;
@@ -21,6 +25,7 @@ body {
 
 .control {
   background-color:rgba(0,0,0,0.7);
+  padding: 0.5em;
 }
 
 .hidden {
