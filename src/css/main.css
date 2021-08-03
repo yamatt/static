@@ -4,6 +4,11 @@ body, html {
   height: 100%;
 }
 
+body {
+  font-family: 'Major Mono Display', monospace;
+  color: #fff;
+}
+
 #background-video {
   object-fit: cover;
   width: 100vw;
@@ -20,6 +25,14 @@ body, html {
 
 .fixed {
   position: fixed;
+}
+
+.top {
+  top: 0;
+}
+
+.width {
+  width: 100vw;
 }
 
 .bottom {
