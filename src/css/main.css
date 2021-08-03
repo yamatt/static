@@ -19,6 +19,10 @@ body {
   pointer-events: none;
 }
 
+.control {
+  background-color:rgba(0,0,0,0.7);
+}
+
 .hidden {
   visibility: hidden;
 }
