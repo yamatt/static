@@ -34,9 +34,9 @@ jobs:
           cp main/src/data/backgrounds.json public
           cp main/src/data/streams.json public
           cp main/dist/main.js main/dist/main.js.map public
+          cp main/src/img/favicon.gif public
       - name: Commit back updated files to public branch
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           repository: public
           commit_message: Updating static webpage
-          file_pattern: index.html main.css main.js main.js.map backgrounds.json streams.json
