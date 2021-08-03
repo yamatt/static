@@ -47,3 +47,11 @@ fetch(streams_url)
   .catch(function(error) {
     console.log(error.message);
   });
+
+document.onkeypress = function (e) {
+  e = e || window.event;
+
+  if (e.code == "Space") {
+    player_el.childNodes[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+  }
+};
