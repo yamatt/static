@@ -4,7 +4,7 @@ body, html {
   height: 100%;
 }
 
-#bg-video {
+#background-video {
   object-fit: cover;
   width: 100vw;
   height: 100vh;
@@ -16,4 +16,16 @@ body, html {
 
 .hidden {
   visibility: hidden;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.right {
+  right: 0;
 }
