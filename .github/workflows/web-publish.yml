@@ -37,4 +37,4 @@ jobs:
         with:
           repository: public
           commit_message: Updating static webpage
-          file_pattern: index.html main.css main.js backgrounds.json streams.json
+          file_pattern: index.html main.css main.js main.js.map backgrounds.json streams.json
