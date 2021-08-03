@@ -23,7 +23,7 @@ fetch(backgrounds_url)
 fetch(streams_url)
   .then(function(response) {
     if (!response.ok) {
-    throw new Error("HTTP error, status = " + response.status);
+      throw new Error("HTTP error, status = " + response.status);
     }
     return response.json();
   })
@@ -41,7 +41,7 @@ fetch(streams_url)
         player.appendChild(yt_iframe);
         break;
       default:
-        // code block
+        throw new Error("No stream processor found");
     }
   })
   .catch(function(error) {
