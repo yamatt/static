@@ -1,19 +1,48 @@
-const bgVideo = document.getElementById("bg-video");
+const background = document.getElementById("background-video");
 const player  = document.getElementById("player");
 
-const video_url = "backgrounds.json";
+const backgrounds_url = "backgrounds.json";
+const streams_url = "streams.json";
 
-fetch(video_url)
+fetch(backgrounds_url)
   .then(function(response) {
     if (!response.ok) {
     throw new Error("HTTP error, status = " + response.status);
     }
     return response.json();
   })
-  .then(function(video_urls) {
-    var stream = video_urls[Math.floor(Math.random() * video_urls.length)];
-    bgVideo.setAttribute("src", stream['url']);
-    bgVideo.playbackRate = 0.5;
+  .then(function(backgrounds) {
+    var background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    background.setAttribute("src", background['url']);
+    background.playbackRate = 0.5;
+  })
+  .catch(function(error) {
+    console.log(error.message);
+  });
+
+fetch(streams_url)
+  .then(function(response) {
+    if (!response.ok) {
+    throw new Error("HTTP error, status = " + response.status);
+    }
+    return response.json();
+  })
+  .then(function(streams) {
+    var stream = streams[Math.floor(Math.random() * streams.length)];
+    const stream_url = new URL(stream['url']);
+    switch(stream_url.hostname) {
+      case "www.youtube.com":
+        while (player.lastChild) {
+          player.removeChild(player.lastChild);
+        }
+        var yt_iframe = document.createElement("iframe");
+        yt_iframe.setAttribute("allow", "autoplay; encrypted-media;");
+        yt_iframe.setAttribute("src", stream['url']);
+        player.appendChild(yt_iframe);
+        break;
+      default:
+        // code block
+    }
   })
   .catch(function(error) {
     console.log(error.message);
