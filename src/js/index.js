@@ -37,7 +37,7 @@ fetch(streams_url)
         }
         var yt_iframe = document.createElement("iframe");
         yt_iframe.setAttribute("allow", "autoplay; encrypted-media;");
-        yt_iframe.setAttribute("src", stream['url'] + "?autoplay=1");
+        yt_iframe.setAttribute("src", stream['url'] + "?autoplay=1&enablejsapi=1");
         player_el.appendChild(yt_iframe);
         break;
       default:
