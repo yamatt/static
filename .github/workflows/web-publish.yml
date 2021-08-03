@@ -31,6 +31,7 @@ jobs:
         run: |
           cp main/src/html/index.html public
           cp main/src/css/main.css public
+          cp main/src/data/backgrounds.json public
           cp main/dist/main.js main/dist/main.js.map public
       - name: Commit back updated files to public branch
         uses: stefanzweifel/git-auto-commit-action@v4
