@@ -20,7 +20,7 @@ fetch(backgrounds_url)
     console.log(error.message);
   });
 
-fetch(streams_url)
+/*fetch(streams_url)
   .then(function(response) {
     if (!response.ok) {
       throw new Error("HTTP error, status = " + response.status);
@@ -47,3 +47,4 @@ fetch(streams_url)
   .catch(function(error) {
     console.log(error.message);
   });
+*/
