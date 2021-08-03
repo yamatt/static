@@ -9,7 +9,7 @@ body {
   color: #fff;
 }
 
-a {rk you must enable a
+a, a:visited {
   color: #fff;
 }
 
