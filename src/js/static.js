@@ -30,7 +30,7 @@ export default class StaticPlayer {
 
   get background() {
     if (!this._background) {
-      this._background = new BackgroundVideo(this.background_video_el);
+      this._background = new Background(this.background_video_el);
     }
     return this._background;
   }
