@@ -1,10 +1,10 @@
-import YouTube as YouTubeStreamer from "./stream/yt.js"
+import YouTube from "./stream/yt.js"
 
 class Player {
   STREAMS_URL = "streams.json"
 
   STREAMERS = {
-    "www.youtube.com": YouTubeStreamer
+    "www.youtube.com": YouTube
   }
 
   constructor (player_el) {
