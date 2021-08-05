@@ -2,13 +2,13 @@ class Shortcuts {
   KEY_MAP = {
     "Space": space
   }
-  
+
   constructor(background, player) {
     this.background = background;
     this.player = player;
   }
 
-  function setup() {
+  setup() {
     document.addEventLisenter("keypress", (e) => {
       e = e || window.event;
 
@@ -16,7 +16,7 @@ class Shortcuts {
     };
   }
 
-  function space (e) {
+  space (e) {
     this.player.toggle();
   }
 }

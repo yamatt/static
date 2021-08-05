@@ -11,7 +11,7 @@ class Player {
     this.player_el = player_el;
   }
 
-  function get_json(url, callback) {
+  get_json(url, callback) {
     fetch(backgrounds_url)
       .then(function(response) {
         if (!response.ok) {
@@ -26,15 +26,15 @@ class Player {
       });
   }
 
-  function handle_streams(streams) {
+  handle_streams(streams) {
     this.update_stream(this.random_choice(streams));
   }
 
-  function random_choice(arr){
+  random_choice(arr){
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
-  function update_stream (stream) {
+  update_stream (stream) {
     if (this.streamer) {this.streamer.destroy()}
 
     const stream_url = new URL(stream.url);
@@ -42,23 +42,23 @@ class Player {
     this.streamer.setup()
   }
 
-  function pause() {
+  pause() {
     this.streamer.stop();
   }
 
-  function play() {
+  play() {
     this.streamer.play();
   }
 
-  function toggle() {
+  toggle() {
     this.streamer.toggle();
   }
 
-  function clear(){
+  clear(){
     if (this.streamer) {this.streamer.destroy()};
   }
 
-  function start() {
+  start() {
     this.get_json(this.STREAMS_URL, this.handle_streams)
   }
 }

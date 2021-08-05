@@ -8,7 +8,7 @@ class YouTubePlayer {
     this.player_el = player_el;
   }
 
-  function setup(){
+  setup(){
     var yt_iframe = document.createElement("iframe");
     yt_iframe.setAttribute("allow", "autoplay; encrypted-media;");
     yt_iframe.setAttribute("src", stream.url + "?enablejsapi=1");
@@ -16,25 +16,25 @@ class YouTubePlayer {
     this.state = State.STOPPED;
   }
 
-  function post_message(message) {
+  post_message(message) {
     this.player_el.childNodes[0].contentWindow.postMessage('{"event":"command","func":"' + message + '","args":""}', '*')
   }
 
-  function play() {
+  play() {
     if (this.state == State.STOPPED) {
       this.post_message('playVideo')
       this.state = State.PLAYING;
     }
   }
 
-  function stop() {
+  stop() {
     if (this.state == State.PLAYING) {
       this.post_message('stopVideo')
       this.state = State.STOPPED;
     }
   }
 
-  function toggle() {
+  toggle() {
     if (this.state == State.PLAYING) {
       this.stop();
       return;

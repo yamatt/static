@@ -5,7 +5,7 @@ class BackgroundVideo {
     this.background_video_el.defaultPlaybackRate = 0.5;
   }
 
-  function get_json(url, callback) {
+  get_json(url, callback) {
     fetch(backgrounds_url)
       .then(function(response) {
         if (!response.ok) {
@@ -19,19 +19,19 @@ class BackgroundVideo {
       });
   }
 
-  function handle_backgrounds(backgrounds) {
+  handle_backgrounds(backgrounds) {
     this.update_video(this.random_choice(backgrounds));
   }
 
-  function random_choice(arr){
+  random_choice(arr){
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
-  function update_video (background) {
+  update_video (background) {
     this.background_video_el.setAttribute("src", background.url);
   }
 
-  function start() {
+  start() {
     this.get_json(this.BACKGROUND_VIDEO_URL, this.handle_backgrounds)
   }
 }

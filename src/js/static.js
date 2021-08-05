@@ -42,7 +42,7 @@ class StaticPlayer {
     return this._shortcuts;
   }
 
-  function run() {
+  run() {
     this.shortcuts.setup();
     this.player.start();
     this.background.start();
