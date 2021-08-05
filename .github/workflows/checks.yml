@@ -1,5 +1,5 @@
 ---
-name: Build static website
+name: Check build
 on: push
 
 jobs:
