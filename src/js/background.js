@@ -13,7 +13,7 @@ export default class BackgroundVideo {
         }
         return response.json();
       })
-      .then(callback)
+      .then(callback.bind(this))
       .catch(function(error) {
         console.log(error.message);
       });
