@@ -10,7 +10,7 @@ export default class YouTube {
   }
 
   setup(){
-    var yt_iframe = document.createElement("iframe");
+    let yt_iframe = document.createElement("iframe");
     yt_iframe.setAttribute("allow", "autoplay; encrypted-media;");
     yt_iframe.setAttribute("src", this.stream_url + "?enablejsapi=1");
     this.player_el.appendChild(yt_iframe);
