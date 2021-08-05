@@ -12,7 +12,7 @@ export default class Player {
   }
 
   get_json(url, callback) {
-    fetch(backgrounds_url)
+    fetch(url)
       .then(function(response) {
         if (!response.ok) {
           throw new Error("HTTP error, status = " + response.status);

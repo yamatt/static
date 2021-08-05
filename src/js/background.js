@@ -6,7 +6,7 @@ export default class BackgroundVideo {
   }
 
   get_json(url, callback) {
-    fetch(backgrounds_url)
+    fetch(curl)
       .then(function(response) {
         if (!response.ok) {
           throw new Error("HTTP error, status = " + response.status);
