@@ -1,4 +1,4 @@
-export class Shortcuts {
+export default class Shortcuts {
   KEY_MAP = {
     "Space": space
   }

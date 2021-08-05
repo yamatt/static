@@ -2,7 +2,7 @@ import Player from "./player.js";
 import Background from "./background.js";
 import Shortcuts from "./shortcuts.js";
 
-export class StaticPlayer {
+export default class StaticPlayer {
   PLAYER_EL_ID = "player"
   BACKGROUND_VIDEO_EL_ID = "background-video"
 

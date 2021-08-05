@@ -1,6 +1,6 @@
 import YouTube from "./stream/yt.js"
 
-export class Player {
+export default class Player {
   STREAMS_URL = "streams.json"
 
   STREAMERS = {
