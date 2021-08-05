@@ -24,17 +24,13 @@ export default class YouTube {
   }
 
   play() {
-    if (this.state == State.STOPPED) {
-      this.post_message('plaVideo')
-      this.state = State.PLAYING;
-    }
+    this.post_message('playVideo')
+    this.state = State.PLAYING;
   }
 
   stop() {
-    if (this.state == State.PLAYING) {
-      this.post_message('stopVideo')
-      this.state = State.STOPPED;
-    }
+    this.post_message('stopVideo')
+    this.state = State.STOPPED;
   }
 
   toggle() {

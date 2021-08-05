@@ -1,9 +1,9 @@
-import YouTube from "./stream/yt.js"
+import YouTube from "./source/yt.js"
 
 export default class Player {
   STREAMS_URL = "streams.json"
 
-  STREAMERS = {
+  SOURCES = {
     "www.youtube.com": YouTube
   }
 
@@ -31,27 +31,27 @@ export default class Player {
   }
 
   update_stream (stream) {
-    if (this.streamer) {this.streamer.destroy()}
+    if (this.source) {this.source.destroy()}
 
     const stream_url = new URL(stream.url);
-    this.streamer = new this.STREAMERS[stream_url.hostname](this.player_el, stream.url)
-    this.streamer.setup()
+    this.source = new this.SOURCES[stream_url.hostname](this.player_el, stream.url)
+    this.source.setup()
   }
 
   pause() {
-    this.streamer.stop();
+    this.source.stop();
   }
 
   play() {
-    this.streamer.play();
+    this.source.play();
   }
 
   toggle() {
-    this.streamer.toggle();
+    this.source.toggle();
   }
 
   clear(){
-    if (this.streamer) {this.streamer.destroy()};
+    if (this.source) {this.source.destroy()};
   }
 
   start() {

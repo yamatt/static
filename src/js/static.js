@@ -3,8 +3,13 @@ import Background from "./background.js";
 import Shortcuts from "./shortcuts.js";
 
 export default class StaticPlayer {
-  PLAYER_EL_ID = "player"
   BACKGROUND_VIDEO_EL_ID = "background-video"
+  BACKGROUND = Background;
+
+  PLAYER_EL_ID = "player";
+  PLAYER = Player;
+
+  SHORTCUTS = Shortcuts;
 
   #background_video;
   #background;
@@ -22,7 +27,7 @@ export default class StaticPlayer {
 
   get background() {
     if (!this.#background) {
-      this.#background = new Background(this.background_video_el);
+      this.#background = new this.BACKGROUND(this.background_video_el);
     }
     return this.#background;
   }
@@ -36,14 +41,14 @@ export default class StaticPlayer {
 
   get player(){
     if(!this.#player) {
-      this.#player = new Player(this.player_el);
+      this.#player = new this.PLAYER(this.player_el);
     }
     return this.#player;
   }
 
   get shortcuts() {
     if (!this.#shortcuts) {
-      this.#shortcuts = new Shortcuts(this.background, this.player);
+      this.#shortcuts = new this.SHORTCUTS(this.background, this.player);
     }
     return this.#shortcuts;
   }
