@@ -6,12 +6,25 @@ export default class StaticPlayer {
   PLAYER_EL_ID = "player"
   BACKGROUND_VIDEO_EL_ID = "background-video"
 
+  #background_video;
+  #background;
+  #player_el;
+  #player;
+  #shortcuts;
+
 
   get background_video_el (){
     if (!this.#background_video){
       this.#background_video = document.getElementById(this.BACKGROUND_VIDEO_EL_ID);
     }
     return this.#background_video;
+  }
+
+  get background() {
+    if (!this.#background) {
+      this.#background = new Background(this.background_video_el);
+    }
+    return this.#background;
   }
 
   get player_el (){
@@ -26,13 +39,6 @@ export default class StaticPlayer {
       this.#player = new Player(this.player_el);
     }
     return this.#player;
-  }
-
-  get background() {
-    if (!this.#background) {
-      this.#background = new Background(this.background_video_el);
-    }
-    return this.#background;
   }
 
   get shortcuts() {
