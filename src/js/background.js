@@ -14,9 +14,6 @@ export default class BackgroundVideo {
         return response.json();
       })
       .then(callback.bind(this))
-      .catch(function(error) {
-        console.log(error.message);
-      });
   }
 
   handle_backgrounds(backgrounds) {

@@ -20,9 +20,6 @@ export default class Player {
         return response.json();
       })
       .then(callback)
-      .catch(function(error) {
-        console.log(error.message);
-      });
   }
 
   handle_streams(streams) {
