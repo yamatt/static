@@ -1,6 +1,6 @@
-import Player from "player";
-import Background from "background";
-import Shortcuts from "background";
+import Player from "./player.js";
+import Background from "./background.js";
+import Shortcuts from "./shortcuts.js";
 
 class StaticPlayer {
   PLAYER_EL_ID = "player"

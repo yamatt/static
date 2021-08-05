@@ -1,4 +1,4 @@
-import StaticPlayer from "static";
+import StaticPlayer from "./static.js";
 
 (function () {
   StaticPlayer.run();
