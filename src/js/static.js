@@ -8,38 +8,38 @@ export default class StaticPlayer {
 
 
   get background_video_el (){
-    if (!this._background_video){
-      this._background_video = document.getElementById(this.BACKGROUND_VIDEO_EL_ID);
+    if (!this.#background_video){
+      this.#background_video = document.getElementById(this.BACKGROUND_VIDEO_EL_ID);
     }
-    return this._background_video;
+    return this.#background_video;
   }
 
   get player_el (){
-    if (!this._player_el) {
-      this._player_el = document.getElementById(this.PLAYER_EL_ID);
+    if (!this.#player_el) {
+      this.#player_el = document.getElementById(this.PLAYER_EL_ID);
     }
-    return this._player_el;
+    return this.#player_el;
   }
 
   get player(){
-    if(!this._player) {
-      this._player = new Player(this.player_el);
+    if(!this.#player) {
+      this.#player = new Player(this.player_el);
     }
-    return this._player;
+    return this.#player;
   }
 
   get background() {
-    if (!this._background) {
-      this._background = new Background(this.background_video_el);
+    if (!this.#background) {
+      this.#background = new Background(this.background_video_el);
     }
-    return this._background;
+    return this.#background;
   }
 
   get shortcuts() {
-    if (!this._shortcuts) {
-      this._shortcuts = new Shortcuts(this.background, this.player);
+    if (!this.#shortcuts) {
+      this.#shortcuts = new Shortcuts(this.background, this.player);
     }
-    return this._shortcuts;
+    return this.#shortcuts;
   }
 
   run() {
