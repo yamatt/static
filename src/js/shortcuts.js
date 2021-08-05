@@ -9,7 +9,7 @@ export default class Shortcuts {
   }
 
   setup() {
-    document.addEventLisenter("keypress", (e) => {
+    document.addEventListener("keypress", (e) => {
       e = e || window.event;
 
       this.KEY_MAP[e.code](e)
