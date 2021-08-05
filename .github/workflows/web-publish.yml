@@ -24,8 +24,7 @@ jobs:
           node-version: '12'
       - name: Install webpack
         run: npm install
-        with:
-          path: main
+        working-directory: ./main
       - name: Package libraries
         run: webpack
         working-directory: ./main
