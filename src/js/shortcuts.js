@@ -13,7 +13,7 @@ class Shortcuts {
       e = e || window.event;
 
       this.KEY_MAP[e.code](e)
-    };
+    })
   }
 
   space (e) {
