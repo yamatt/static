@@ -12,6 +12,6 @@ jobs:
         with:
           node-version: '12'
       - name: Run lint
-        run: npx jslint src/js
+        run: npx jslint src/js/*.js
       - name: Package code
         run: npx webpack
