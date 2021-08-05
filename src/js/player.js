@@ -19,7 +19,7 @@ export default class Player {
         }
         return response.json();
       })
-      .then(callback)
+      .then(callback.bind(this))
   }
 
   handle_streams(streams) {
