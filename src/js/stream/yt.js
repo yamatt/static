@@ -45,7 +45,7 @@ class YouTube {
     }
   }
 
-  function destroy() {
+  destroy() {
     this.stop()
     while (this.player_el.lastChild) {
       this.player_el.removeChild(this.player_el.lastChild);
