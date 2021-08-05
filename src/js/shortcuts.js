@@ -9,10 +9,11 @@ export default class Shortcuts {
   }
 
   setup() {
+    const that = this;
     document.addEventListener("keypress", (e) => {
       e = e || window.event;
 
-      this.KEY_MAP[e.code](e)
+      this.KEY_MAP[e.code].call(that, e)
     })
   }
 
