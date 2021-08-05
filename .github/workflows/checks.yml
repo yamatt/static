@@ -1,0 +1,15 @@
+---
+name: Check build
+on: push
+
+jobs:
+  check:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: Package code
+        run: npx webpack
