@@ -1,6 +1,6 @@
 import StaticPlayer from "./static.js";
 
 (function () {
-  static = New StaticPlayer();
-  static.run();
+  static_player = New StaticPlayer();
+  static_player.run();
 })();
