@@ -34,7 +34,7 @@ export default class Player {
     if (this.streamer) {this.streamer.destroy()}
 
     const stream_url = new URL(stream.url);
-    this.streamer = this.STREAMERS[stream_url.hostname](this.player_el, stream.url)
+    this.streamer = new this.STREAMERS[stream_url.hostname](this.player_el, stream.url)
     this.streamer.setup()
   }
 
