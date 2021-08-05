@@ -29,7 +29,7 @@ jobs:
         working-directory: ./main
       - name: Copy files to right location
         run: |
-          cp main/src/html/index.html public
+          cp main/index.html public
           cp main/src/css/main.css public
           cp main/src/data/backgrounds.json public
           cp main/src/data/streams.json public
