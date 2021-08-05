@@ -11,7 +11,5 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - name: Run lint
-        run: npx jslint --edition=latest src/js/*.js
       - name: Package code
         run: npx webpack
