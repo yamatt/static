@@ -6,12 +6,13 @@ class State {
 export default class YouTube {
   constructor(player_el, stream_url) {
     this.player_el = player_el;
+    this.stream_url = stream_url;
   }
 
   setup(){
     var yt_iframe = document.createElement("iframe");
     yt_iframe.setAttribute("allow", "autoplay; encrypted-media;");
-    yt_iframe.setAttribute("src", stream.url + "?enablejsapi=1");
+    yt_iframe.setAttribute("src", this.stream_url + "?enablejsapi=1");
     this.player_el.appendChild(yt_iframe);
     this.state = State.STOPPED;
   }
