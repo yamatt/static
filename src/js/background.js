@@ -1,4 +1,4 @@
-class BackgroundVideo {
+export class BackgroundVideo {
   BACKGROUND_VIDEO_URL = "backgrounds.json"
   constructor (background_video_el) {
     this.background_video_el = background_video_el;

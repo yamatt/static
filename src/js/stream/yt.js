@@ -3,7 +3,7 @@ class State {
   PLAYING = 1
 }
 
-class YouTube {
+export class YouTube {
   constructor(player_el, stream_url) {
     this.player_el = player_el;
   }

@@ -1,4 +1,4 @@
-class Shortcuts {
+export class Shortcuts {
   KEY_MAP = {
     "Space": space
   }
