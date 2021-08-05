@@ -1,6 +1,6 @@
 export default class Shortcuts {
   KEY_MAP = {
-    "Space": space
+    "Space": this.space
   }
 
   constructor(background, player) {
