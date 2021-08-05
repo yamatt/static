@@ -27,7 +27,7 @@ export default class StaticPlayer {
 
   get background() {
     if (!this.#background) {
-      this.#background = new this.BACKGROUND(this.background_video_el);
+      this.#background = new this.BACKGROUND(this);
     }
     return this.#background;
   }
@@ -41,14 +41,14 @@ export default class StaticPlayer {
 
   get player(){
     if(!this.#player) {
-      this.#player = new this.PLAYER(this.player_el);
+      this.#player = new this.PLAYER(this);
     }
     return this.#player;
   }
 
   get shortcuts() {
     if (!this.#shortcuts) {
-      this.#shortcuts = new this.SHORTCUTS(this.background, this.player);
+      this.#shortcuts = new this.SHORTCUTS(this);
     }
     return this.#shortcuts;
   }

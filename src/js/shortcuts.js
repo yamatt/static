@@ -3,9 +3,8 @@ export default class Shortcuts {
     "Space": this.space
   }
 
-  constructor(background, player) {
-    this.background = background;
-    this.player = player;
+  constructor(parent) {
+    this.parent = parent;
   }
 
   setup() {
@@ -18,6 +17,6 @@ export default class Shortcuts {
   }
 
   space (e) {
-    this.player.toggle();
+    this.parent.player.toggle();
   }
 }
