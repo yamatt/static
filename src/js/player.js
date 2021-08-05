@@ -20,7 +20,6 @@ export default class Player {
         return response.json();
       })
       .then(callback)
-      .then(() => {this.play()})
       .catch(function(error) {
         console.log(error.message);
       });
