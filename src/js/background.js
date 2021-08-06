@@ -35,13 +35,14 @@ export default class BackgroundVideo {
   }
 
   stream_changed() {
-    if (localStorage.getItem("bg-" + this.parent.player.stream.id)) {
-      this.background = this.backgrounds[this.parent.player.stream.id];
-      this.update_background(this.background)
-      this.parent.info.update_background(this.background);
+    var that = this;
+    if (localStorage.getItem("bg-" + that.parent.player.stream.id)) {
+      that.background = that.backgrounds[that.parent.player.stream.id];
+      that.update_background(this.background)
+      that.parent.info.update_background(that.background);
     }
     else {
-      this.change();
+      that.change();
     }
   }
 
