@@ -42,6 +42,7 @@ export default class Player {
   change_stream () {
     this.stream = this.random_stream();
     if (this.source) {this.source.destroy()}
+    this.parent.info.update_stream(this.stream);
 
     const stream_url = new URL(this.stream.url);
     this.source = new this.SOURCES[stream_url.hostname](this);

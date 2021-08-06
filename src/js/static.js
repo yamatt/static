@@ -1,6 +1,7 @@
 import Player from "./player.js";
 import Background from "./background.js";
 import Shortcuts from "./shortcuts.js";
+import Info from "./info.js";
 
 export default class StaticPlayer {
   BACKGROUND_VIDEO_EL_ID = "background-video"
@@ -11,11 +12,16 @@ export default class StaticPlayer {
 
   SHORTCUTS = Shortcuts;
 
+  INFO_EL_ID = "info";
+  INFO = Info;
+
   #background_video;
   #background;
   #player_el;
   #player;
   #shortcuts;
+  #info_el;
+  #info;
 
 
   get background_video_el (){
@@ -51,6 +57,20 @@ export default class StaticPlayer {
       this.#shortcuts = new this.SHORTCUTS(this);
     }
     return this.#shortcuts;
+  }
+
+  get info_el (){
+    if (!this.#info_el) {
+      this.#info_el = document.getElementById(this.INFO_EL_ID);
+    }
+    return this.#info_el;
+  }
+
+  get info(){
+    if(!this.#info_el) {
+      this.#info_el = new this.INFO(this);
+    }
+    return this.#info;
   }
 
   run() {
