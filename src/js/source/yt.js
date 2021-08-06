@@ -1,7 +1,4 @@
-const State = {
-  "STOPPED": 0,
-  "PLAYING": 1
-}
+import { State } from './state';
 
 export default class YouTube {
   #state;

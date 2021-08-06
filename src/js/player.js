@@ -1,9 +1,5 @@
 import YouTube from "./source/yt.js"
-
-const State = {
-  "STOPPED": 0,
-  "PLAYING": 1
-}
+import { State } from './state';
 
 export default class Player {
   STREAMS_URL = "streams.json"
