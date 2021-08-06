@@ -9,7 +9,7 @@ export default class InfoBox {
     }
 
     get stream_el () {
-      if (!#stream_el) {
+      if (!this.#stream_el) {
         this.#stream_el = document.createElement("pre");
         this.info_el.appendChild(this.#stream_el);
       }
@@ -17,7 +17,7 @@ export default class InfoBox {
     }
 
     get background_el () {
-      if (!#background_el) {
+      if (!this.#background_el) {
         this.#background_el = document.createElement("pre");
         this.info_el.appendChild(this.#background_el);
       }
