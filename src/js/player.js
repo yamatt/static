@@ -32,7 +32,7 @@ export default class Player {
   }
 
   random_stream() {
-    return this.random_choice(this.streams);
+    return this.random_choice(this.streams.values());
   }
 
   change_stream () {

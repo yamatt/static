@@ -27,7 +27,7 @@ export default class BackgroundVideo {
   }
 
   random_background() {
-    return this.random_choice(this.backgrounds)
+    return this.random_choice(this.backgrounds.values())
   }
 
   update_background (background) {
