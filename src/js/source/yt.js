@@ -2,6 +2,7 @@ import { State } from '../state';
 
 export default class YouTube {
   #state;
+  #iframe;
 
   constructor(parent) {
     this.parent = parent;
@@ -11,10 +12,10 @@ export default class YouTube {
 
   setup(){
     let that = this;
-    this.iframe = document.createElement("iframe");
-    this.iframe.setAttribute("allow", "autoplay; encrypted-media;");
-    this.iframe.setAttribute("src", this.stream_url + "?enablejsapi=1");
-    this.iframe.addEventListener("load", function (e) { that.play() })
+    this.#iframe = document.createElement("iframe");
+    this.#iframe.setAttribute("allow", "autoplay; encrypted-media;");
+    this.#iframe.setAttribute("src", this.stream_url + "?enablejsapi=1");
+    this.#iframe.addEventListener("load", function (e) { that.play() })
     this.player_el.appendChild(this.iframe);
     this.#state = State.STOPPED;
   }
@@ -24,7 +25,7 @@ export default class YouTube {
   }
 
   post_message(message) {
-    this.iframe.contentWindow.postMessage('{"event":"command","func":"' + message + '","args":""}', '*')
+    this.#iframe.contentWindow.postMessage('{"event":"command","func":"' + message + '","args":""}', '*')
   }
 
   play() {
@@ -39,9 +40,8 @@ export default class YouTube {
 
   destroy() {
     this.stop()
-    while (this.player_el.lastChild) {
-      this.player_el.removeChild(this.player_el.lastChild);
-    }
+    this.#iframe.remove();
+    this.#iframe = undefined;
     this.#state == undefined;
   }
 }
