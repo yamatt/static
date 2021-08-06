@@ -32,7 +32,10 @@ export default class Player {
   }
 
   random_stream() {
-    return this.random_choice(this.streams.values());
+    let streams = Object.keys(this.streams).map(function (key) {
+      return obj[key];
+    });
+    return this.random_choice(streams);
   }
 
   change_stream () {
