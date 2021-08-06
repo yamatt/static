@@ -34,6 +34,12 @@ export default class BackgroundVideo {
     return this.random_choice(backgrounds)
   }
 
+  stream_changed() {
+    if (localStorage.getItem("bg-" + this.parent.player.stream.id)) {
+      update_background(this.backgrounds[this.parent.player.stream.id])
+    }
+  }
+
   update_background (background) {
     this.background_video_el.setAttribute("src", background.url);
   }

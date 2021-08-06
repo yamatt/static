@@ -41,6 +41,13 @@ export default class Player {
 
   change_stream () {
     this.stream = this.random_stream();
+    this.start_stream();
+  }
+
+  start_stream() {
+    if (!this.stream && localStorage.getItem("stream")) {
+      this.stream = localStorage.getItem("stream")
+    }
     if (this.source) {this.source.destroy()}
     this.parent.info.update_stream(this.stream);
 
