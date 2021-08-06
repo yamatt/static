@@ -10,7 +10,7 @@ export default class Info {
 
     get stream_el () {
       if (!this.#stream_el) {
-        this.#stream_el = document.createElement("pre");
+        this.#stream_el = document.createElement("div");
         this.info_el.appendChild(this.#stream_el);
       }
       return this.#stream_el
@@ -18,7 +18,7 @@ export default class Info {
 
     get background_el () {
       if (!this.#background_el) {
-        this.#background_el = document.createElement("pre");
+        this.#background_el = document.createElement("div");
         this.info_el.appendChild(this.#background_el);
       }
       return this.#background_el
