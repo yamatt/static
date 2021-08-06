@@ -36,7 +36,12 @@ export default class BackgroundVideo {
 
   stream_changed() {
     if (localStorage.getItem("bg-" + this.parent.player.stream.id)) {
-      this.update_background(this.backgrounds[this.parent.player.stream.id])
+      this.background = this.backgrounds[this.parent.player.stream.id];
+      this.update_background(this.background)
+      this.parent.info.update_background(this.background);
+    }
+    else {
+      this.change();
     }
   }
 
@@ -60,6 +65,6 @@ export default class BackgroundVideo {
 
   start() {
     this.get_backgrounds()
-      .then(this.change.bind(this))
+      .then(this.stream_changed.bind(this))
   }
 }
