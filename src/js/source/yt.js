@@ -1,5 +1,5 @@
 State = {
-  "STOPPED": 0
+  "STOPPED": 0,
   "PLAYING": 1
 }
 
