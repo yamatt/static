@@ -60,7 +60,7 @@ a, a:visited {
   margin: 1em;
 }
 
-#help {
+#help > li {
   list-style-type: none;
 }
 
