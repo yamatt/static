@@ -36,7 +36,7 @@ export default class BackgroundVideo {
 
   stream_changed() {
     if (localStorage.getItem("bg-" + this.parent.player.stream.id)) {
-      update_background(this.backgrounds[this.parent.player.stream.id])
+      this.update_background(this.backgrounds[this.parent.player.stream.id])
     }
   }
 
