@@ -17,11 +17,15 @@ export default class YouTube {
     this.#iframe.setAttribute("src", this.stream_url + "?enablejsapi=1");
     this.#iframe.addEventListener("load", function (e) { that.play() })
     this.player_el.appendChild(this.#iframe);
-    this.#state = State.STOPPED;
+    this.state = State.STOPPED;
   }
 
   get state() {
     return this.#state;
+  }
+
+  set state (state) {
+    this.#state = state;
   }
 
   post_message(message) {
@@ -30,18 +34,18 @@ export default class YouTube {
 
   play() {
     this.post_message('playVideo')
-    this.#state = State.PLAYING;
+    this.state = State.PLAYING;
   }
 
   stop() {
     this.post_message('stopVideo')
-    this.#state = State.STOPPED;
+    this.state = State.STOPPED;
   }
 
   destroy() {
     this.stop()
     this.#iframe.remove();
     this.#iframe = undefined;
-    this.#state == undefined;
+    this.state == undefined;
   }
 }
