@@ -28,7 +28,7 @@ export default class BackgroundVideo {
 
   random_background() {
     let backgrounds = Object.keys(this.backgrounds).map(function (key) {
-      return obj[key];
+      return this.backgrounds[key];
     });
     return this.random_choice(backgrounds)
   }
