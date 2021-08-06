@@ -16,7 +16,7 @@ export default class YouTube {
     this.#iframe.setAttribute("allow", "autoplay; encrypted-media;");
     this.#iframe.setAttribute("src", this.stream_url + "?enablejsapi=1");
     this.#iframe.addEventListener("load", function (e) { that.play() })
-    this.player_el.appendChild(this.iframe);
+    this.player_el.appendChild(this.#iframe);
     this.#state = State.STOPPED;
   }
 
