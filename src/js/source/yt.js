@@ -14,9 +14,7 @@ export default class YouTube {
     yt_iframe.setAttribute("allow", "autoplay; encrypted-media;");
     yt_iframe.setAttribute("src", this.stream_url + "?enablejsapi=1");
     this.player_el.appendChild(yt_iframe);
-    console.log("####", this.state)
     this.state = State.STOPPED;
-    console.log("#### 2", this.state)
   }
 
   post_message(message) {
@@ -34,7 +32,7 @@ export default class YouTube {
   }
 
   toggle() {
-    console.log("######## 3", this.state)
+    console.log(this);
     if (this.state == State.PLAYING) {
       this.stop();
       return;
