@@ -34,6 +34,7 @@ export default class YouTube {
   }
 
   toggle() {
+    console.log("######## 3", this.state)
     if (this.state == State.PLAYING) {
       this.stop();
       return;
