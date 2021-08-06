@@ -26,16 +26,13 @@ export default class Info {
 
     update_background(background) {
       let content = background.title;
-      this.background_el.appendChild(document.createTextNode(content))
-    }
-
-    update_background(background) {
-      let content = background.title;
+      this.background_el.childNodes[0].remove()
       this.background_el.appendChild(document.createTextNode(content))
     }
 
     update_stream(stream) {
       let content = stream.title;
+      this.stream_el.childNodes[0].remove()
       this.stream_el.appendChild(document.createTextNode(content))
     }
 }
