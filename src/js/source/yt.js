@@ -6,9 +6,10 @@ const State = {
 export default class YouTube {
   #state;
 
-  constructor(player_el, stream_url) {
-    this.player_el = player_el;
-    this.stream_url = stream_url;
+  constructor(parent) {
+    this.parent = parent;
+    this.player_el = parent.player_el;
+    this.stream_url = parent.stream_url;
   }
 
   setup(){

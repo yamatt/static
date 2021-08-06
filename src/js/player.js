@@ -44,7 +44,7 @@ export default class Player {
     if (this.source) {this.source.destroy()}
 
     const stream_url = new URL(this.stream.url);
-    this.source = new this.SOURCES[stream_url.hostname](this.player_el, this.stream.url)
+    this.source = new this.SOURCES[stream_url.hostname](this);
     this.source.setup()
     localStorage.setItem("stream", this.stream.id);
   }
