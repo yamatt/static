@@ -1,6 +1,6 @@
-class State {
-  STOPPED = 0
-  PLAYING = 1
+State = {
+  "STOPPED": 0
+  "PLAYING": 1
 }
 
 export default class YouTube {
