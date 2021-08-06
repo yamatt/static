@@ -64,10 +64,13 @@ a, a:visited {
   list-style-type: none;
 }
 
-.center-screen {
+.fill {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container-center {
   display: flex;
-  top: 50vh;
-  left: 50vw;
-  margin-top: -50vh;
-  margin-left: -50vw;
+  align-items: center;
+  justify-content: center;
 }
