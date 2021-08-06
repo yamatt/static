@@ -1,6 +1,10 @@
 export default class Shortcuts {
   KEY_MAP = {
-    "Space": this.space
+    "Space": this.playpause,
+    "ArrowRight": this.next_station,
+    "ArrowLeft": this.prev_station,
+    "ArrowDown": this.change_background,
+    "ArrowUp": this.change_background
   }
 
   constructor(parent) {
@@ -9,14 +13,28 @@ export default class Shortcuts {
 
   setup() {
     const that = this;
-    document.addEventListener("keypress", (e) => {
+    document.addEventListener("keyup", (e) => {
       e = e || window.event;
 
-      this.KEY_MAP[e.code].call(that, e)
+      if (e.code in this.KEY_MAP) {
+        this.KEY_MAP[e.code].call(that, e)
+      }
     })
   }
 
-  space (e) {
+  playpause (e) {
     this.parent.player.toggle();
+  }
+
+  next_station () {
+    this.parent.player.change_stream()
+  }
+
+  prev_station () {
+    this.parent.player.change_stream()
+  }
+
+  change_background () {
+    this.parent.background.change();
   }
 }
