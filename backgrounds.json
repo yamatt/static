@@ -1,44 +1,51 @@
-[
-  {
+{
+  "lemon": {
+    "id": "lemon",
     "title": "Pixel 8Bit GIF by FireflyPixel",
     "source": "https://www.facebook.com/Low.Resolution.Boy/",
     "origin_url": "https://giphy.com/gifs/8bit-warrior-lemon-uWdfUbHEHmrmZS1THG",
     "url": "https://media4.giphy.com/media/uWdfUbHEHmrmZS1THG/giphy.mp4"
   },
-  {
+  "rain-girl": {
+    "id": "rain-girl",
     "title": "Pixel Rain GIF by FireflyPixel",
     "source": "https://www.facebook.com/Low.Resolution.Boy/",
     "origin_url": "https://giphy.com/gifs/pixel-rain-pixelart-NlXTjBvswUyi41p9Rn",
     "url": "https://media4.giphy.com/media/NlXTjBvswUyi41p9Rn/giphy.mp4"
   },
-  {
+  "collapse": {
+    "id": "collapse",
     "title": "Animation Loop GIF by tverd",
     "source": "http://tverdlofi.tumblr.com/",
     "origin_url": "https://giphy.com/gifs/animation-loop-3oKIPfNuAz8AtCcARW",
     "url": "https://media4.giphy.com/media/3oKIPfNuAz8AtCcARW/giphy.mp4"
   },
-  {
+  "80s-car": {
+    "id": "80s-car",
     "title": "Illustration 80S GIF by tverd",
     "source": "http://tverdlofi.tumblr.com/",
     "origin_url": "https://giphy.com/gifs/80s-illustration-l0Iy4zJympn6fYrRK",
     "url": "https://media4.giphy.com/media/l0Iy4zJympn6fYrRK/giphy.mp4"
   },
-  {
+  "": {
+    "id": "",
     "title": "8 Bit Pixel GIF",
     "source": "https://www.instagram.com/p/B8Flz8CHZ5e/",
     "origin_url": "https://giphy.com/gifs/pixelart-pixelarts-pixelartsociety-jUclRzkkmQCEdos0Mp",
     "url": "https://media4.giphy.com/media/jUclRzkkmQCEdos0Mp/giphy.mp4"
   },
-  {
+  "chimney": {
+    "id": "chimney",
     "title": "8 Bit Pixel GIF",
     "source": "https://www.instagram.com/p/B5mA7e8AFPk/",
     "origin_url": "https://giphy.com/gifs/pixel-pixelart-arthouse-QB9dm2ubI0EwflmJK2",
     "url": "https://media4.giphy.com/media/QB9dm2ubI0EwflmJK2/giphy.mp4"
   },
-  {
+  "kitty": {
+    "id": "kitty",
     "title": "Cat Perfect Loop GIF",
     "source": "https://www.reddit.com/user/orbojunglist",
     "origin_url": "https://giphy.com/gifs/cat-gato-perfect-loop-xT39CTN0kxWCmbzc1W",
     "url": "https://media4.giphy.com/media/xT39CTN0kxWCmbzc1W/giphy.mp4"
   }
-]
+}
