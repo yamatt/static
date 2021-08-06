@@ -67,8 +67,8 @@ export default class StaticPlayer {
   }
 
   get info(){
-    if(!this.#info_el) {
-      this.#info_el = new this.INFO(this);
+    if(!this.#info) {
+      this.#info = new this.INFO(this);
     }
     return this.#info;
   }

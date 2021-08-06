@@ -1,4 +1,4 @@
-export default class InfoBox {
+export default class Info {
 
     #stream_el;
     #background_el;
