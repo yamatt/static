@@ -60,11 +60,14 @@ a, a:visited {
   margin: 1em;
 }
 
+#help {
+  list-style-type: none;
+}
+
 .center-screen {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
+  top: 50vh;
+  left: 50vw;
+  margin-top: -50vh;
+  margin-left: -50vw;
 }
