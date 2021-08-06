@@ -23,7 +23,7 @@ a, a:visited {
   pointer-events: none;
 }
 
-.control {
+.info {
   background-color:rgba(0,0,0,0.7);
   padding: 0 0.5em;
 }
@@ -50,4 +50,12 @@ a, a:visited {
 
 .right {
   right: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.box {
+  margin: 1em;
 }
