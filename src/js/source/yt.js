@@ -11,11 +11,11 @@ export default class YouTube {
 
   setup(){
     let that = this;
-    let yt_iframe = document.createElement("iframe");
-    yt_iframe.setAttribute("allow", "autoplay; encrypted-media;");
-    yt_iframe.setAttribute("src", this.stream_url + "?enablejsapi=1");
-    yt_iframe.addEventListener("load", function (e) { that.play() })
-    this.player_el.appendChild(yt_iframe);
+    this.iframe = document.createElement("iframe");
+    this.iframe.setAttribute("allow", "autoplay; encrypted-media;");
+    this.iframe.setAttribute("src", this.stream_url + "?enablejsapi=1");
+    this.iframe.addEventListener("load", function (e) { that.play() })
+    this.player_el.appendChild(this.iframe);
     this.#state = State.STOPPED;
   }
 
@@ -24,7 +24,7 @@ export default class YouTube {
   }
 
   post_message(message) {
-    this.player_el.childNodes[0].contentWindow.postMessage('{"event":"command","func":"' + message + '","args":""}', '*')
+    this.iframe.contentWindow.postMessage('{"event":"command","func":"' + message + '","args":""}', '*')
   }
 
   play() {
