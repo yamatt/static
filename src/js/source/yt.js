@@ -7,7 +7,7 @@ export default class YouTube {
   constructor(parent) {
     this.parent = parent;
     this.player_el = parent.player_el;
-    this.stream_url = parent.stream_url;
+    this.stream_url = parent.stream.url;
   }
 
   setup(){
