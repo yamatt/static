@@ -14,7 +14,7 @@ export default class YouTube {
     yt_iframe.setAttribute("allow", "autoplay; encrypted-media;");
     yt_iframe.setAttribute("src", this.stream_url + "?enablejsapi=1");
     this.player_el.appendChild(yt_iframe);
-    this.state = State.STOPPED;
+    this.player_state = State.STOPPED;
   }
 
   post_message(message) {
@@ -23,21 +23,21 @@ export default class YouTube {
 
   play() {
     this.post_message('playVideo')
-    this.state = State.PLAYING;
+    this.player_state = State.PLAYING;
   }
 
   stop() {
     this.post_message('stopVideo')
-    this.state = State.STOPPED;
+    this.player_state = State.STOPPED;
   }
 
   toggle() {
     console.log(this);
-    if (this.state == State.PLAYING) {
+    if (this.player_state == State.PLAYING) {
       this.stop();
       return;
     }
-    else if (this.state == State.STOPPED) {
+    else if (this.player_state == State.STOPPED) {
       this.play();
       return;
     }
