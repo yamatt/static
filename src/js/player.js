@@ -84,6 +84,6 @@ export default class Player {
   start() {
     this.get_json(this.STREAMS_URL, this.handle_streams)
       .then(this.handle_streams.bind(this))
-      .then(this.change_stream.bind(this))
+      .then(this.start_stream.bind(this))
   }
 }
