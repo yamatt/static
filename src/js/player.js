@@ -1,5 +1,10 @@
 import YouTube from "./source/yt.js"
 
+const State = {
+  "STOPPED": 0,
+  "PLAYING": 1
+}
+
 export default class Player {
   STREAMS_URL = "streams.json"
 
@@ -53,7 +58,14 @@ export default class Player {
   }
 
   toggle() {
-    this.source.toggle();
+    if (this.source.state == State.PLAYING) {
+      this.source.stop();
+      return;
+    }
+    else if (this.source.state == State.STOPPED) {
+      this.source.play();
+      return;
+    }
   }
 
   clear(){
