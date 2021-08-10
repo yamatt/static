@@ -25,18 +25,22 @@ export default class Info {
     }
 
     update_background(background) {
-      let content = background.title;
       if (this.background_el.childNodes.length > 0) {
         this.background_el.childNodes[0].remove()
       }
-      this.background_el.appendChild(document.createTextNode(content))
+      let link = document.createElement("a");
+      link.href = background.origin_url;
+      link.appendChild(document.createTextNode(background.title))
+      this.background_el.appendChild(link)
     }
 
     update_stream(stream) {
-      let content = stream.title;
       if (this.stream_el.childNodes.length > 0) {
         this.stream_el.childNodes[0].remove()
       }
-      this.stream_el.appendChild(document.createTextNode(content))
+      let link = document.createElement("a");
+      link.href = stream.origin_url;
+      link.appendChild(document.createTextNode(stream.title);
+      this.stream_el.appendChild(link)
     }
 }
