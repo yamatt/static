@@ -30,6 +30,7 @@ export default class Info {
       }
       let link = document.createElement("a");
       link.href = background.origin_url;
+      link.target = "_blank"
       link.appendChild(document.createTextNode(background.title))
       this.background_el.appendChild(link)
     }
@@ -40,6 +41,7 @@ export default class Info {
       }
       let link = document.createElement("a");
       link.href = stream.origin_url;
+      link.target = "_blank"
       link.appendChild(document.createTextNode(stream.title));
       this.stream_el.appendChild(link)
     }
