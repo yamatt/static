@@ -28,10 +28,12 @@ export default class Shortcuts {
 
   next_station () {
     this.parent.player.change_stream()
+    this.parent.player.start_stream()
   }
 
   prev_station () {
     this.parent.player.change_stream()
+    this.parent.player.start_stream()
   }
 
   change_background () {
