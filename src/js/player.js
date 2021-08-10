@@ -55,7 +55,6 @@ export default class Player {
     this.source = new this.SOURCES[stream_url.hostname](this);
     this.source.setup()
     localStorage.setItem("stream", this.stream.id);
-    this.parent.background.stream_changed()
   }
 
   pause() {

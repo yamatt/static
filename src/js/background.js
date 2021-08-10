@@ -66,6 +66,6 @@ export default class BackgroundVideo {
 
   start() {
     this.get_backgrounds()
-      .then(this.stream_changed.bind(this))
+      .then(this.change.bind(this))
   }
 }
