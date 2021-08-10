@@ -40,7 +40,7 @@ export default class Info {
       }
       let link = document.createElement("a");
       link.href = stream.origin_url;
-      link.appendChild(document.createTextNode(stream.title);
+      link.appendChild(document.createTextNode(stream.title));
       this.stream_el.appendChild(link)
     }
 }
