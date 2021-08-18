@@ -61,5 +61,26 @@
     "source": "https://limeartgroup.com/shop/vj-loops-pack-vol-59-rave-ape-gorilla/",
     "origin_url": "https://giphy.com/gifs/limeartgroup-monkey-gorilla-rave-ape-9S1ziIUXuHvuWATwmP",
     "url": "https://media3.giphy.com/media/9S1ziIUXuHvuWATwmP/giphy.mp4"
+  },
+  "cat-study": {
+    "id": "cat-study",
+    "title": "Cat Studying GIF by katherine",
+    "source": "https://www.instagram.com/p/B-lc1RSDD2A/",
+    "origin_url": "https://giphy.com/gifs/anime-cat-lo-fi-WRRL1EKo9rNe12S4zh",
+    "url": "https://media3.giphy.com/media/WRRL1EKo9rNe12S4zh/giphy.mp4"
+  },
+  "surreal-scifi": {
+    "id": "surreal-scifi",
+    "title": "Surreal Sci Fi GIF by Rune Fisker",
+    "source": "http://runefisker.com/",
+    "origin_url": "https://giphy.com/gifs/sci-fi-depressed-robots-26xBtYr00MHZJQty0",
+    "url": "https://media3.giphy.com/media/26xBtYr00MHZJQty0/giphy.mp4"
+  },
+  "rave-cat": {
+    "id": "rave-cat",
+    "title": "Flashing GIF",
+    "source": "http://gatinho_neon/",
+    "origin_url": "https://giphy.com/gifs/cat-dancing-dancingcat-IzKrzRa01oB2KkvC7I",
+    "url": "https://media3.giphy.com/media/IzKrzRa01oB2KkvC7I/giphy.mp4"
   }
 }
