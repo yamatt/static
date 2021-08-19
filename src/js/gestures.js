@@ -9,7 +9,7 @@ export default class Gestures {
   }
 
   #body_el;
-  #gesture_state = GESTURE_STATE.stopped;
+  #gesture_state = this.GESTURE_STATE.stopped;
 
   constructor (parent) {
     this.parent = parent;
