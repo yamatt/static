@@ -17,6 +17,8 @@ export default class StaticPlayer {
   INFO_EL_ID = "info";
   INFO = Info;
 
+  MEDIA = Media;
+
   #background_video;
   #background;
   #player_el;
