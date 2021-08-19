@@ -39,7 +39,7 @@ export default class Gestures {
 
   timer_end() {
     if(this.#gesture_state == GESTURE_STATE.stopped) {
-      # tapped
+      //tapped
       this.parent.player.toggle();
     }
   }
