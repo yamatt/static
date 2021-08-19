@@ -17,17 +17,17 @@ export default class Media {
   }
 
   set_artist(artist) {
-    this.metadata.artist = artist;
+    this.#metadata.artist = artist;
     this.set_metadata()
   }
 
   set_title(title) {
-    this.metadata.title = title;
+    this.#metadata.title = title;
     this.set_metadata()
   }
 
   set_artwork(url) {
-    this.metadata.artwork = [{src: url}];
+    this.#metadata.artwork = [{src: url}];
     this.set_metadata()
   }
 
