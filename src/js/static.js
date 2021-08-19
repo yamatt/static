@@ -2,6 +2,8 @@ import Player from "./player.js";
 import Background from "./background.js";
 import Shortcuts from "./shortcuts.js";
 import Info from "./info.js";
+import Media from "./media.js";
+
 
 export default class StaticPlayer {
   BACKGROUND_VIDEO_EL_ID = "background-video"
@@ -22,6 +24,7 @@ export default class StaticPlayer {
   #shortcuts;
   #info_el;
   #info;
+  #media;
 
 
   get background_video_el (){
@@ -73,9 +76,17 @@ export default class StaticPlayer {
     return this.#info;
   }
 
+  get media () {
+    if(!this.#media) {
+      this.#media = new this.MEDIA(this);
+    }
+    return this.#info;
+  }
+
   run() {
     this.shortcuts.setup();
     this.player.start();
     this.background.start();
+    this.media.start();
   }
 }

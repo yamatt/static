@@ -7,6 +7,8 @@ export default class Shortcuts {
     "ArrowUp": this.change_background
   }
 
+  media;
+
   constructor(parent) {
     this.parent = parent;
   }
@@ -22,7 +24,7 @@ export default class Shortcuts {
     })
   }
 
-  playpause (e) {
+  playpause () {
     this.parent.player.toggle();
   }
 

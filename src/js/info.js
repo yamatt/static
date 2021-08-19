@@ -44,5 +44,6 @@ export default class Info {
       link.target = "_blank"
       link.appendChild(document.createTextNode(stream.title));
       this.stream_el.appendChild(link)
+      this.parent.media.set_title(stream.title);
     }
 }
