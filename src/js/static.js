@@ -82,7 +82,7 @@ export default class StaticPlayer {
     if(!this.#media) {
       this.#media = new this.MEDIA(this);
     }
-    return this.#info;
+    return this.#media;
   }
 
   run() {
