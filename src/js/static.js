@@ -101,5 +101,6 @@ export default class StaticPlayer {
     this.player.start();
     this.background.start();
     this.media.start();
+    this.gestures.start();
   }
 }
