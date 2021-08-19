@@ -1,11 +1,12 @@
-GESTURE_STATE = {
-  "stopped": 0,
-  "started": 1
-}
 
 export default class Gestures {
 
   GESTURE_DELAY_MS = 200;
+
+  GESTURE_STATE = {
+    "stopped": 0,
+    "started": 1
+  }
 
   #body_el;
   #gesture_state = GESTURE_STATE.stopped;
@@ -28,17 +29,17 @@ export default class Gestures {
   }
 
   touch_start(e) {
-    this.#gesture_state = GESTURE_STATE.started;
+    this.#gesture_state = this.GESTURE_STATE.started;
 
     setTimeout(this.timer_end.bind(this),this.GESTURE_DELAY_MS);
   }
 
   touch_stop(e) {
-    this.#gesture_state = GESTURE_STATE.stopped;
+    this.#gesture_state = this.GESTURE_STATE.stopped;
   }
 
   timer_end() {
-    if(this.#gesture_state == GESTURE_STATE.stopped) {
+    if(this.#gesture_state == this.GESTURE_STATE.stopped) {
       //tapped
       this.parent.player.toggle();
     }
