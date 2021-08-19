@@ -33,9 +33,9 @@ export default class Media {
 
   start() {
     this.set_artwork("favicon.gif");
-    this.media.setActionHandler('play', this.parent.player.toggle;
-    this.media.setActionHandler('pause', this.parent.player.toggle;
-    this.media.setActionHandler('stop', this.parent.player.toggle;
+    this.media.setActionHandler('play', this.parent.player.toggle);
+    this.media.setActionHandler('pause', this.parent.player.toggle);
+    this.media.setActionHandler('stop', this.parent.player.toggle);
     this.media.setActionHandler('seekbackward', this.parent.shortcuts.prev_station);
     this.media.setActionHandler('seekforward', this.parent.shortcuts.next_station);
     this.media.setActionHandler('previoustrack', this.parent.shortcuts.prev_station);
