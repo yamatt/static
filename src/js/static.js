@@ -3,6 +3,7 @@ import Background from "./background.js";
 import Shortcuts from "./shortcuts.js";
 import Info from "./info.js";
 import Media from "./media.js";
+import Gestures from "./gestures.js";
 
 
 export default class StaticPlayer {
@@ -19,6 +20,8 @@ export default class StaticPlayer {
 
   MEDIA = Media;
 
+  GESTURES = Gestures;
+
   #background_video;
   #background;
   #player_el;
@@ -27,6 +30,7 @@ export default class StaticPlayer {
   #info_el;
   #info;
   #media;
+  #gestures;
 
 
   get background_video_el (){
@@ -83,6 +87,13 @@ export default class StaticPlayer {
       this.#media = new this.MEDIA(this);
     }
     return this.#media;
+  }
+
+  get gestures () {
+    if(!this.#gestures) {
+      this.#gestures = new this.GESTURES(this);
+    }
+    return this.#gestures;
   }
 
   run() {
