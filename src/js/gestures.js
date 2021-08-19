@@ -1,5 +1,5 @@
 GESTURE_STATE = {
-  "stopped": 0
+  "stopped": 0,
   "started": 1
 }
 
