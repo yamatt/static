@@ -1,6 +1,6 @@
 # Static
 
-Static is an open source web-based embedded radio player that uses webpack to generate a static page that can be hosted as a GitHub Page.
+[Static](https://yamatt.github.io/static) is an open source web-based embedded radio player that uses webpack to generate a static page that can be hosted as a GitHub Page.
 
 You can submit radio stations from YouTube as Pull Requests, or fork this repo to create your own playlist.
 
@@ -16,11 +16,11 @@ The backgrounds are videos from giphy that are loaded in a video element in the 
 
 ## Updating Stations
 
-Update the streams file to listen to your preferred live streams. It currently only works with YouTube.
+Update the streams JSON in `src/data` to listen to your preferred live streams. It currently only works with YouTube.
 
 ## Updating Backgrounds
 
-Update the backgrounds file to select relaxing animations to have in the background. Note that they are played at 50% speed to make them even more relaxing.
+Update the backgrounds JSON in `src/data` to select relaxing animations to have in the background. Note that they are played at 50% speed to make them even more relaxing.
 
 ## License
 AGPLv3
