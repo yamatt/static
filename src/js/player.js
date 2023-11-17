@@ -9,6 +9,7 @@ export default class Player {
   }
 
   #streams;
+  #stream_index;
 
   constructor (parent) {
     this.parent = parent
@@ -28,7 +29,7 @@ export default class Player {
   set streams(streams) {
     this.#streams = this.#streams;
 
-    this.stream = this.parent.storage.stream;
+    this.stream = this.parent.storage.stream_index;
   }
 
   get streams() {
@@ -44,7 +45,8 @@ export default class Player {
     if (index==null) {
       index = this.random_stream_index(this.streams);
     }
-    this.parent.storage.stream = index;
+    this.parent.storage.stream_index = index;
+    this.#stream_index = index;
 
     this.start_stream()
   }
@@ -61,15 +63,19 @@ export default class Player {
     return this.random_choice(streams);
   }
 
-  change_stream () {
-    this.stream = this.random_background_index(backgrounds);
+  change_stream (step) {
+    if(!step) {
+      step=1;
+    }
+    this.stream = this.streams[this.#stream_index+step]
   }
 
-  start_stream() {
+  start_stream(index) {
+    const stream = this.streams[index];
     if (this.source) {this.source.destroy()}
-    this.parent.info.update_stream(this.stream);
+    this.parent.info.update_stream(stream);
 
-    const stream_url = new URL(this.stream.url);
+    const stream_url = new URL(stream.url);
     this.source = new this.SOURCES[stream_url.hostname](this);
     this.source.setup()
   }

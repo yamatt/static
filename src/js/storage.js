@@ -15,19 +15,19 @@ export default class Storage {
         return this.storage.getItem(key)
     }
 
-    get stream () {
+    get stream_index () {
         return this.get_item("stream")
     }
 
-    set stream(index) {
+    set stream_index(index) {
         this.set_item("stream", index);
     }
 
-    get background () {
+    get background_index () {
         return this.get_item("background")
     }
 
-    set background(index) {
+    set background_index(index) {
         this.set_item("background", index);
     }
 }

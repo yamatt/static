@@ -2,7 +2,7 @@ export default class BackgroundVideo {
   BACKGROUND_VIDEO_URL = "backgrounds.json"
 
   #backgrounds;
-  #current_background;
+  #background_index;
 
   constructor (parent) {
     this.parent = parent;
@@ -24,7 +24,7 @@ export default class BackgroundVideo {
   set backgrounds(backgrounds) {
     this.#backgrounds = backgrounds;
 
-    this.background = this.parent.storage.background;
+    this.background = this.parent.storage.background_index;
   }
 
   get backgrounds() {
@@ -41,13 +41,13 @@ export default class BackgroundVideo {
     if (index==null) {
       index = this.random_background_index(backgrounds);
     }
-    this.parent.storage.background = index;
-    this.update_background(current_background_index);
+    this.parent.storage.background_index = index;
+    this.background_index = index;
+    this.update_background();
   }
 
   change() {
-    let random_index = this.random_background_index(backgrounds);
-    this.update_background(random_index);
+    this.background = this.random_background_index(backgrounds);
   }
 
 
@@ -55,8 +55,8 @@ export default class BackgroundVideo {
     return Math.floor(Math.random() * arr.length);
   }
 
-  update_background (background) {
-    this.background_video_el.setAttribute("src", background.url);
+  update_background () {
+    this.background_video_el.setAttribute("src", this.backgrounds[this.background_index].url);
   }
 
   setup() {
