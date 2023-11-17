@@ -10,7 +10,7 @@ export default class Updater {
   }
 
   get_release(url, callback) {
-    return fetch(url)
+    return fetch(url, {cache: "no-cache"})
       .then(function(response) {
         if (!response.ok) {
           throw new Error("HTTP error, status = " + response.status);
