@@ -1,32 +1,27 @@
-{
-  "lofi-girl": {
-    "id": "lofi-girl",
+[
+  {
     "title": "lofi hip hop radio - beats to relax/study to",
     "origin_url": "https://www.youtube.com/watch?v=jfKfPfyJRdk",
     "url": "https://www.youtube.com/embed/jfKfPfyJRdk"
   },
-  "dark-monkey1": {
-    "id": "dark-monkey1",
+  {
     "title": "Minimal Techno & EDM Minimal House - Dark Monkey Music Live Radio 24/7 Car Music",
     "origin_url": "https://www.youtube.com/watch?v=u_rtFDI5Cq8",
     "url": "https://www.youtube.com/embed/u_rtFDI5Cq8"
   },
-  "dark-monkey2": {
-    "id": "dark-monkey2",
+  {
     "title": "Dark Minimal Techno Trip Live Radio 24/7 Dark Monkey Music",
     "origin_url": "https://www.youtube.com/watch?v=XlUdRCJGtqc",
     "url": "https://www.youtube.com/embed/XlUdRCJGtqc"
   },
-  "party-vibes": {
-    "id": "party-vibes",
+  {
     "title": "P A R T Y V I B E S | Homer driving with Mickey - Minimal Techno & EDM House & Bounce Live Radio",
     "origin_url": "https://www.youtube.com/watch?v=JaaiJQi8Iy8",
     "url": "https://www.youtube.com/embed/JaaiJQi8Iy8"
   },
-  "japan-lofi": {
-    "id": "japan-lofi",
+  {
     "title": "Japanese Lofi Radio 24/7 🔴 Aesthetic Lofi Hip Hop Music 🔴 No Copyright Lofi Hip Hop Beats",
     "origin_url": "https://www.youtube.com/watch?v=JWlKA9wmO64",
     "url": "https://www.youtube.com/embed/JWlKA9wmO64"
   }
-}
+]

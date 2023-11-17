@@ -5,6 +5,7 @@ import Info from "./info.js";
 import Media from "./media.js";
 import Gestures from "./gestures.js";
 import Updater from "./updater.js";
+import Storage from "./storage.js";
 
 
 export default class StaticPlayer {
@@ -25,6 +26,8 @@ export default class StaticPlayer {
 
   UPDATER = Updater;
 
+  STORAGE = Storage;
+
   #background_video;
   #background;
   #player_el;
@@ -35,6 +38,7 @@ export default class StaticPlayer {
   #media;
   #gestures;
   #updater;
+  #storage;
 
 
   get background_video_el (){
@@ -107,10 +111,17 @@ export default class StaticPlayer {
     return this.#updater;
   }
 
+  get storage () {
+    if(!this.#storage) {
+      this.#storage = new this.STORAGE(this);
+    }
+    return this.#storage;
+  }
+
   run() {
     this.shortcuts.setup();
-    this.player.start();
-    this.background.start();
+    this.player.setup();
+    this.background.setup();
     this.media.start();
     this.gestures.start();
     this.updater.start();

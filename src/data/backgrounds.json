@@ -1,86 +1,74 @@
-{
-  "lemon": {
-    "id": "lemon",
+[
+  {
     "title": "Pixel 8Bit GIF by FireflyPixel",
     "source": "https://www.facebook.com/Low.Resolution.Boy/",
     "origin_url": "https://giphy.com/gifs/8bit-warrior-lemon-uWdfUbHEHmrmZS1THG",
     "url": "https://media4.giphy.com/media/uWdfUbHEHmrmZS1THG/giphy.mp4"
   },
-  "rain-girl": {
-    "id": "rain-girl",
+  {
     "title": "Pixel Rain GIF by FireflyPixel",
     "source": "https://www.facebook.com/Low.Resolution.Boy/",
     "origin_url": "https://giphy.com/gifs/pixel-rain-pixelart-NlXTjBvswUyi41p9Rn",
     "url": "https://media4.giphy.com/media/NlXTjBvswUyi41p9Rn/giphy.mp4"
   },
-  "collapse": {
-    "id": "collapse",
+  {
     "title": "Animation Loop GIF by tverd",
     "source": "http://tverdlofi.tumblr.com/",
     "origin_url": "https://giphy.com/gifs/animation-loop-3oKIPfNuAz8AtCcARW",
     "url": "https://media4.giphy.com/media/3oKIPfNuAz8AtCcARW/giphy.mp4"
   },
-  "80s-car": {
-    "id": "80s-car",
+  {
     "title": "Illustration 80S GIF by tverd",
     "source": "http://tverdlofi.tumblr.com/",
     "origin_url": "https://giphy.com/gifs/80s-illustration-l0Iy4zJympn6fYrRK",
     "url": "https://media4.giphy.com/media/l0Iy4zJympn6fYrRK/giphy.mp4"
   },
-  "chimney": {
-    "id": "chimney",
+  {
     "title": "8 Bit Pixel GIF",
     "source": "https://www.instagram.com/p/B8Flz8CHZ5e/",
     "origin_url": "https://giphy.com/gifs/pixelart-pixelarts-pixelartsociety-jUclRzkkmQCEdos0Mp",
     "url": "https://media4.giphy.com/media/jUclRzkkmQCEdos0Mp/giphy.mp4"
   },
-  "red-sky": {
-    "id": "red-sky",
+  {
     "title": "8 Bit Pixel GIF",
     "source": "https://www.instagram.com/p/B5mA7e8AFPk/",
     "origin_url": "https://giphy.com/gifs/pixel-pixelart-arthouse-QB9dm2ubI0EwflmJK2",
     "url": "https://media4.giphy.com/media/QB9dm2ubI0EwflmJK2/giphy.mp4"
   },
-  "kitty": {
-    "id": "kitty",
+  {
     "title": "Cat Perfect Loop GIF",
     "source": "https://www.reddit.com/user/orbojunglist",
     "origin_url": "https://giphy.com/gifs/cat-gato-perfect-loop-xT39CTN0kxWCmbzc1W",
     "url": "https://media4.giphy.com/media/xT39CTN0kxWCmbzc1W/giphy.mp4"
   },
-  "sushi-cat": {
-    "id": "sushi-cat",
+  {
     "title": "Pixel Art Sushi GIF by pixel jeff",
     "source": "https://66.media.tumblr.com/ec91d01e032655ead88cb109ed646b8e/tumblr_pz5xlpm2wT1tgo74ho1_640.gif",
     "origin_url": "https://giphy.com/gifs/pixel-art-jeff-cPZdap8PGhSvABr6xW",
     "url": "https://media3.giphy.com/media/cPZdap8PGhSvABr6xW/giphy.mp4"
   },
-  "rave-ape": {
-    "id": "rave-ape",
+  {
     "title": "video art monkey GIF by limeartgroup",
     "source": "https://limeartgroup.com/shop/vj-loops-pack-vol-59-rave-ape-gorilla/",
     "origin_url": "https://giphy.com/gifs/limeartgroup-monkey-gorilla-rave-ape-9S1ziIUXuHvuWATwmP",
     "url": "https://media3.giphy.com/media/9S1ziIUXuHvuWATwmP/giphy.mp4"
   },
-  "cat-study": {
-    "id": "cat-study",
+  {
     "title": "Cat Studying GIF by katherine",
     "source": "https://www.instagram.com/p/B-lc1RSDD2A/",
     "origin_url": "https://giphy.com/gifs/anime-cat-lo-fi-WRRL1EKo9rNe12S4zh",
     "url": "https://media3.giphy.com/media/WRRL1EKo9rNe12S4zh/giphy.mp4"
   },
-  "surreal-scifi": {
-    "id": "surreal-scifi",
+  {
     "title": "Surreal Sci Fi GIF by Rune Fisker",
     "source": "http://runefisker.com/",
     "origin_url": "https://giphy.com/gifs/sci-fi-depressed-robots-26xBtYr00MHZJQty0",
     "url": "https://media3.giphy.com/media/26xBtYr00MHZJQty0/giphy.mp4"
   },
-  "rave-cat": {
-    "id": "rave-cat",
+  {
     "title": "Flashing GIF",
     "source": "http://gatinho_neon/",
     "origin_url": "https://giphy.com/gifs/cat-dancing-dancingcat-IzKrzRa01oB2KkvC7I",
     "url": "https://media3.giphy.com/media/IzKrzRa01oB2KkvC7I/giphy.mp4"
   }
-}
+]

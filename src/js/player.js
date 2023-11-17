@@ -8,6 +8,8 @@ export default class Player {
     "www.youtube.com": YouTube
   }
 
+  #streams;
+
   constructor (parent) {
     this.parent = parent
     this.player_el = parent.player_el;
@@ -23,12 +25,32 @@ export default class Player {
       })
   }
 
-  handle_streams(streams) {
-    this.streams = streams;
+  set streams(streams) {
+    this.#streams = this.#streams;
+
+    this.stream = this.parent.storage.stream;
   }
 
-  random_choice(arr){
-    return arr[Math.floor(Math.random() * arr.length)];
+  get streams() {
+    let that = this;
+    if(!this.#streams) {
+      this.get_json(this.STREAMS_URL, (streams) => {
+        that.streams = streams;
+      })
+    }
+  }
+
+  set stream (index) {
+    if (index==null) {
+      index = this.random_stream_index(this.streams);
+    }
+    this.parent.storage.stream = index;
+
+    this.start_stream()
+  }
+
+  random_stream_index(arr){
+    return Math.floor(Math.random() * arr.length);
   }
 
   random_stream() {
@@ -40,23 +62,16 @@ export default class Player {
   }
 
   change_stream () {
-    this.stream = this.random_stream();
+    this.stream = this.random_background_index(backgrounds);
   }
 
   start_stream() {
-    if (!this.stream && localStorage.getItem("stream")) {
-      this.stream = this.streams[localStorage.getItem("stream")]
-    }
-    else {
-      this.change_stream();
-    }
     if (this.source) {this.source.destroy()}
     this.parent.info.update_stream(this.stream);
 
     const stream_url = new URL(this.stream.url);
     this.source = new this.SOURCES[stream_url.hostname](this);
     this.source.setup()
-    localStorage.setItem("stream", this.stream.id);
   }
 
   pause() {
@@ -82,9 +97,7 @@ export default class Player {
     if (this.source) {this.source.destroy()};
   }
 
-  start() {
-    this.get_json(this.STREAMS_URL, this.handle_streams)
-      .then(this.handle_streams.bind(this))
-      .then(this.start_stream.bind(this))
+  setup() {
+    this.streams;
   }
 }

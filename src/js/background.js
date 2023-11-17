@@ -1,6 +1,9 @@
 export default class BackgroundVideo {
   BACKGROUND_VIDEO_URL = "backgrounds.json"
 
+  #backgrounds;
+  #current_background;
+
   constructor (parent) {
     this.parent = parent;
     this.background_video_el = parent.background_video_el;
@@ -18,54 +21,45 @@ export default class BackgroundVideo {
       .then(callback.bind(this))
   }
 
-  handle_backgrounds(backgrounds) {
-    this.backgrounds = backgrounds;
+  set backgrounds(backgrounds) {
+    this.#backgrounds = backgrounds;
+
+    this.background = this.parent.storage.background;
   }
 
-  random_choice(arr){
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
-  random_background() {
-    var that = this;
-    let backgrounds = Object.keys(this.backgrounds).map(function (key) {
-      return that.backgrounds[key];
-    });
-    return this.random_choice(backgrounds)
-  }
-
-  stream_changed() {
-    var that = this;
-    if (localStorage.getItem("bg-" + that.parent.player.stream.id)) {
-      that.background = that.backgrounds[that.parent.player.stream.id];
-      that.update_background(this.background)
-      that.parent.info.update_background(that.background);
+  get backgrounds() {
+    let that = this;
+    if (!this.#backgrounds) {
+      this.get_json(this.BACKGROUND_VIDEO_URL, (backgrounds) => {
+        that.backgrounds = backgrounds;
+      })
     }
-    else {
-      that.change();
+    return this.#backgrounds;
+  }
+
+  set background(index) {
+    if (index==null) {
+      index = this.random_background_index(backgrounds);
     }
+    this.parent.storage.background = index;
+    this.update_background(current_background_index);
+  }
+
+  change() {
+    let random_index = this.random_background_index(backgrounds);
+    this.update_background(random_index);
+  }
+
+
+  random_background_index(arr){
+    return Math.floor(Math.random() * arr.length);
   }
 
   update_background (background) {
     this.background_video_el.setAttribute("src", background.url);
   }
 
-  change() {
-    this.background = this.random_background()
-    this.update_background(this.background);
-    this.parent.info.update_background(this.background);
-    if (this.parent.player.stream) {
-      localStorage.setItem("bg-" + this.parent.player.stream.id, this.background.id);
-    }
-
-  }
-
-  get_backgrounds() {
-    return this.get_json(this.BACKGROUND_VIDEO_URL, this.handle_backgrounds)
-  }
-
-  start() {
-    this.get_backgrounds()
-      .then(this.change.bind(this))
+  setup() {
+    this.backgrounds;
   }
 }
