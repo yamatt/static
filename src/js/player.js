@@ -73,7 +73,7 @@ export default class Player {
     if (next > this.streams.length-1) {
       next = 0;
     }
-    this.stream = this.streams[next]
+    this.stream = next;
   }
 
   start_stream() {
