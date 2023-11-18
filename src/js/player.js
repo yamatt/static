@@ -24,31 +24,31 @@ export default class Player {
         }
         return response.json();
       })
+      .then(callback.bind(this))
   }
 
   set streams(streams) {
-    this.#streams = this.#streams;
+    this.#streams = streams;
 
     this.stream = this.parent.storage.stream_index;
   }
 
   get streams() {
-    let that = this;
-    if(!this.#streams) {
-      this.get_json(this.STREAMS_URL, (streams) => {
-        that.streams = streams;
-      })
-    }
+    return this.#streams;
   }
 
   set stream (index) {
-    if (index==null) {
+    if (isNaN(index)) {
       index = this.random_stream_index(this.streams);
     }
     this.parent.storage.stream_index = index;
     this.#stream_index = index;
 
-    this.start_stream()
+    this.start_stream();
+  }
+
+  get stream() {
+    return this.streams[this.#stream_index];
   }
 
   random_stream_index(arr){
@@ -67,15 +67,19 @@ export default class Player {
     if(!step) {
       step=1;
     }
-    this.stream = this.streams[this.#stream_index+step]
+
+    let next = this.#stream_index+step;
+    if (next > this.streams.length-1) {
+      next = 0;
+    }
+    this.stream = this.streams[next]
   }
 
-  start_stream(index) {
-    const stream = this.streams[index];
-    if (this.source) {this.source.destroy()}
-    this.parent.info.update_stream(stream);
+  start_stream() {
+    this.parent.info.update_stream(this.stream);
 
-    const stream_url = new URL(stream.url);
+    if (this.source) {this.source.destroy()}
+    const stream_url = new URL(this.stream.url);
     this.source = new this.SOURCES[stream_url.hostname](this);
     this.source.setup()
   }
@@ -104,6 +108,9 @@ export default class Player {
   }
 
   setup() {
-    this.streams;
+    let that = this;
+    this.get_json(this.STREAMS_URL, (streams) => {
+      that.streams = streams;
+    })
   }
 }

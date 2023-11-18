@@ -28,26 +28,22 @@ export default class BackgroundVideo {
   }
 
   get backgrounds() {
-    let that = this;
-    if (!this.#backgrounds) {
-      this.get_json(this.BACKGROUND_VIDEO_URL, (backgrounds) => {
-        that.backgrounds = backgrounds;
-      })
-    }
     return this.#backgrounds;
   }
 
   set background(index) {
-    if (index==null) {
-      index = this.random_background_index(backgrounds);
+    if (isNaN(index)) {
+      index = this.random_background_index(this.backgrounds);
     }
+
     this.parent.storage.background_index = index;
-    this.background_index = index;
+    this.#background_index = index;
+
     this.update_background();
   }
 
   change() {
-    this.background = this.random_background_index(backgrounds);
+    this.background = this.random_background_index(this.backgrounds);
   }
 
 
@@ -56,10 +52,13 @@ export default class BackgroundVideo {
   }
 
   update_background () {
-    this.background_video_el.setAttribute("src", this.backgrounds[this.background_index].url);
+    this.background_video_el.setAttribute("src", this.backgrounds[this.#background_index].url);
   }
 
   setup() {
-    this.backgrounds;
+    let that = this;
+    this.get_json(this.BACKGROUND_VIDEO_URL, (backgrounds) => {
+      that.backgrounds = backgrounds;
+    })
   }
 }
