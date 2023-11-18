@@ -32,7 +32,7 @@ export default class BackgroundVideo {
   }
 
   set background(index) {
-    if (isNaN(index)) {
+    if (index == null) {
       index = this.random_background_index(this.backgrounds);
     }
 

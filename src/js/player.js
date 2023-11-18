@@ -38,9 +38,10 @@ export default class Player {
   }
 
   set stream (index) {
-    if (isNaN(index)) {
+    if (index == null) {
       index = this.random_stream_index(this.streams);
     }
+
     this.parent.storage.stream_index = index;
     this.#stream_index = index;
 
