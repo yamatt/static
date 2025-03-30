@@ -38,7 +38,7 @@ jobs:
           cp main/src/img/favicon.gif public
           echo $GITHUB_SHA > public/release
       - name: Commit back updated files to public branch
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           repository: public
           commit_message: Updating static webpage
