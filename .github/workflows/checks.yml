@@ -4,13 +4,13 @@ on: push
 
 jobs:
   check:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Install NodeJS
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '12'
+          node-version: "22"
       - name: Install npm dependencies
         run: npm install
       - name: Package code
