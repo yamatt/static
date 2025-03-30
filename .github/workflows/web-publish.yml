@@ -11,10 +11,10 @@ jobs:
     steps:
       - name: Create branch directories
         run: mkdir -p main public
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           path: main
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: public
           path: public
