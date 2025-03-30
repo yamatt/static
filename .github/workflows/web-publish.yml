@@ -5,40 +5,36 @@ on:
     branches:
       - "main"
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - name: Create branch directories
-        run: mkdir -p main public
       - uses: actions/checkout@v4
-        with:
-          path: main
-      - uses: actions/checkout@v4
-        with:
-          ref: public
-          path: public
       - name: Install NodeJS
         uses: actions/setup-node@v4
         with:
           node-version: "22"
       - name: Install webpack
         run: npm install
-        working-directory: ./main
       - name: Package libraries
-        run: webpack
-        working-directory: ./main
-      - name: Copy files to right location
+        run: npm run build
+      - name: Add release number
         run: |
-          cp main/src/html/index.html public
-          cp main/src/css/main.css public
-          cp main/src/data/backgrounds.json public
-          cp main/src/data/streams.json public
-          cp main/dist/main.js main/dist/main.js.map public
-          cp main/src/img/favicon.gif public
-          echo $GITHUB_SHA > public/release
-      - name: Commit back updated files to public branch
-        uses: stefanzweifel/git-auto-commit-action@v5
+          echo $GITHUB_SHA > ./dist/release
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          repository: public
-          commit_message: Updating static webpage
+          path: "./dist"
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
