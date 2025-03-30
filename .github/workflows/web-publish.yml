@@ -7,21 +7,21 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Create branch directories
         run: mkdir -p main public
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           path: main
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: public
           path: public
       - name: Install NodeJS
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '12'
+          node-version: "22"
       - name: Install webpack
         run: npm install
         working-directory: ./main
@@ -38,7 +38,7 @@ jobs:
           cp main/src/img/favicon.gif public
           echo $GITHUB_SHA > public/release
       - name: Commit back updated files to public branch
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           repository: public
           commit_message: Updating static webpage
