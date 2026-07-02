@@ -2,7 +2,7 @@
   "dependencies": {
     "copy-webpack-plugin": "^14.0.0",
     "html-minimizer-webpack-plugin": "6.0.0",
-    "webpack": "5.107.2",
+    "webpack": "5.108.1",
     "webpack-cli": "^7.0.3"
   },
   "scripts": {
