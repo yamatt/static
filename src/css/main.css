@@ -46,6 +46,13 @@ h1 {
   background-color:rgba(0,0,0,0.7);
   padding: 1em;
 }
+#autoplay-popup {
+  max-width: 20rem;
+}
+
+#autoplay-popup button {
+  margin-top: 1em;
+}
 
 .hidden {
   visibility: hidden;
