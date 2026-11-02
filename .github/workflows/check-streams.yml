@@ -2,7 +2,7 @@ name: Check Streams are active
 
 on:
   schedule:
-    - cron: 0 9 1 * *" # Run daily at 09am UTC
+    - cron: "0 9 1 * *" # Run daily at 09am UTC
 
 permissions:
   contents: read
