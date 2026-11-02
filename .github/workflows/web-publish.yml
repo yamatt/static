@@ -9,6 +9,7 @@ on:
       - "package.json"
       - "package-lock.json"
       - "webpack.config.js"
+      - ".github/workflows/web-publish.yml"
 
 permissions:
   contents: read
