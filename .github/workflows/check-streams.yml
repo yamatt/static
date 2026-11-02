@@ -1,0 +1,33 @@
+name: Check Streams are active
+
+on:
+  schedule:
+    - cron: 0 9 1 * *" # Run daily at 09am UTC
+
+permissions:
+  contents: read
+
+jobs:
+  list-streams:
+    name: Find Streams
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Get Stream URLs
+        id: streams
+        run: |
+          URLS_JSON=$(jq -c '[.[] | .url]') ./src/data/streams.json
+          echo "streams=$URLS_JSON" >> $GITHUB_OUTPUT
+  check-streams:
+    name: Check Streams
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        url: ${{ fromJson(needs.streams.output.streams) }}
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Check stream
+        run: |
+          echo "Checking: ${{ matrix.url }}"
+          curl -s -o /dev/null -I -w "%{http_code}" "${{ matrix.url }}"
