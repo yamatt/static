@@ -43,6 +43,11 @@ export default class Gestures {
       return;
     }
 
+    if (Math.abs(delta_y) >= this.SWIPE_THRESHOLD_PX && Math.abs(delta_y) > Math.abs(delta_x)) {
+      this.parent.background.change();
+      return;
+    }
+
     this.parent.player.toggle();
   }
 

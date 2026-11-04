@@ -47,8 +47,17 @@ export default class BackgroundVideo {
   }
 
 
-  random_background_index(arr){
-    return Math.floor(Math.random() * arr.length);
+  random_background_index(arr) {
+    if (arr.length < 2) {
+      return 0;
+    }
+
+    const currentIndex = Number(this.#background_index);
+    const randomIndex = Math.floor(Math.random() * (arr.length - 1));
+    if (Number.isInteger(currentIndex) && currentIndex >= 0 && currentIndex < arr.length && randomIndex >= currentIndex) {
+      return randomIndex + 1;
+    }
+    return randomIndex;
   }
 
   update_background () {
