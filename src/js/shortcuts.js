@@ -19,6 +19,9 @@ export default class Shortcuts {
       e = e || window.event;
 
       if (e.code in this.KEY_MAP) {
+        if (e.code === "ArrowRight" || e.code === "ArrowLeft") {
+          e.preventDefault();
+        }
         this.KEY_MAP[e.code].call(that, e)
       }
     })
@@ -29,13 +32,11 @@ export default class Shortcuts {
   }
 
   next_station () {
-    this.parent.player.change_stream()
-    this.parent.player.start_stream()
+    this.parent.player.change_stream(1)
   }
 
   prev_station () {
-    this.parent.player.change_stream()
-    this.parent.player.start_stream()
+    this.parent.player.change_stream(-1)
   }
 
   change_background () {

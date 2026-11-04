@@ -1,15 +1,10 @@
 
 export default class Gestures {
 
-  GESTURE_DELAY_MS = 200;
-
-  GESTURE_STATE = {
-    "stopped": 0,
-    "started": 1
-  }
+  SWIPE_THRESHOLD_PX = 50;
 
   #body_el;
-  #gesture_state = this.GESTURE_STATE.stopped;
+  #touch_start;
 
   constructor (parent) {
     this.parent = parent;
@@ -25,23 +20,33 @@ export default class Gestures {
   start() {
     this.body_el.addEventListener("touchstart", this.touch_start.bind(this));
     this.body_el.addEventListener("touchend", this.touch_stop.bind(this));
-    this.body_el.addEventListener("touchcancel", this.touch_stop.bind(this));
+    this.body_el.addEventListener("touchcancel", this.touch_cancel.bind(this));
   }
 
   touch_start(e) {
-    this.#gesture_state = this.GESTURE_STATE.started;
-
-    setTimeout(this.timer_end.bind(this),this.GESTURE_DELAY_MS);
+    const touch = e.changedTouches[0];
+    this.#touch_start = { x: touch.clientX, y: touch.clientY };
   }
 
   touch_stop(e) {
-    this.#gesture_state = this.GESTURE_STATE.stopped;
+    if (!this.#touch_start) {
+      return;
+    }
+
+    const touch = e.changedTouches[0];
+    const delta_x = touch.clientX - this.#touch_start.x;
+    const delta_y = touch.clientY - this.#touch_start.y;
+    this.#touch_start = null;
+
+    if (Math.abs(delta_x) >= this.SWIPE_THRESHOLD_PX && Math.abs(delta_x) > Math.abs(delta_y)) {
+      this.parent.player.change_stream(delta_x < 0 ? 1 : -1);
+      return;
+    }
+
+    this.parent.player.toggle();
   }
 
-  timer_end() {
-    if(this.#gesture_state == this.GESTURE_STATE.stopped) {
-      //tapped
-      this.parent.player.toggle();
-    }
+  touch_cancel() {
+    this.#touch_start = null;
   }
 }
