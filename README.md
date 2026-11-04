@@ -30,6 +30,7 @@ From the root of this repo:
 
 ```bash
 npm install
+npm run lint
 npm run build
 npm run local
 ```

@@ -11,7 +11,7 @@ export default class Storage {
         this.storage.setItem(key, value)
     }
 
-    get_item(key, value) {
+    get_item(key) {
         return this.storage.getItem(key)
     }
 

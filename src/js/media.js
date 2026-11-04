@@ -12,6 +12,7 @@ export default class Media {
     if ('mediaSession' in navigator) {
       return navigator.mediaSession;
     }
+    return undefined;
   }
 
   set_metadata() {
