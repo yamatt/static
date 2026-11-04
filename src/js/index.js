@@ -1,8 +1,6 @@
-import StaticPlayer from "./static.js";
+import { mount } from "svelte";
+import App from "../App.svelte";
 
-let static_player;
-
-(function () {
-  static_player = new StaticPlayer();
-  static_player.run();
-})();
+mount(App, {
+  target: document.getElementById("app"),
+});

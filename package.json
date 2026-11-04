@@ -1,15 +1,14 @@
 {
   "dependencies": {
-    "copy-webpack-plugin": "^14.0.0",
-    "html-minimizer-webpack-plugin": "6.0.0",
-    "webpack": "5.112.2",
-    "webpack-cli": "^7.2.3"
+    "svelte": "^5.0.0"
   },
   "scripts": {
-    "build": "npx webpack --mode production",
-    "local": "npx http-server ./dist"
+    "build": "vite build",
+    "local": "vite",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "vite": "^7.3.7"
   }
 }
