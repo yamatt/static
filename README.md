@@ -24,7 +24,7 @@ Update the backgrounds JSON in `src/data` to select relaxing animations to have 
 
 ## Development
 
-You can run this locally by building with webpack, putting all the files together in a public directory and hosting a static server there.
+The page UI is implemented in `src/App.svelte`; Vite compiles it with the existing player code into the static `dist` directory. Run `npm run local` to start the development server, or `npm run preview` to serve the production build.
 
 From the root of this repo:
 
@@ -35,4 +35,5 @@ npm run local
 ```
 
 ## License
+
 AGPLv3

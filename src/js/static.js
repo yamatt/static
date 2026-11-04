@@ -17,7 +17,6 @@ export default class StaticPlayer {
 
   SHORTCUTS = Shortcuts;
 
-  INFO_EL_ID = "info";
   INFO = Info;
 
   MEDIA = Media;
@@ -33,13 +32,16 @@ export default class StaticPlayer {
   #player_el;
   #player;
   #shortcuts;
-  #info_el;
   #info;
   #media;
   #gestures;
   #updater;
   #storage;
 
+  constructor({ onStreamChange, onBackgroundChange } = {}) {
+    this.onStreamChange = onStreamChange;
+    this.onBackgroundChange = onBackgroundChange;
+  }
 
   get background_video_el (){
     if (!this.#background_video){
@@ -74,13 +76,6 @@ export default class StaticPlayer {
       this.#shortcuts = new this.SHORTCUTS(this);
     }
     return this.#shortcuts;
-  }
-
-  get info_el (){
-    if (!this.#info_el) {
-      this.#info_el = document.getElementById(this.INFO_EL_ID);
-    }
-    return this.#info_el;
   }
 
   get info(){

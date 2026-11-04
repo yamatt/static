@@ -1,3 +1,5 @@
+import favicon from "../img/favicon.gif";
+
 export default class Media {
 
   #metadata = {};
@@ -32,7 +34,7 @@ export default class Media {
   }
 
   start() {
-    this.set_artwork("favicon.gif");
+    this.set_artwork(favicon);
     this.media.setActionHandler('play', this.parent.player.toggle);
     this.media.setActionHandler('pause', this.parent.player.toggle);
     this.media.setActionHandler('stop', this.parent.player.toggle);

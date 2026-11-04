@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "weekly"
     cooldown:
-      default-days: 5
+      default-days: 7
     assignees:
       - yamatt
     labels:
@@ -21,7 +21,7 @@ updates:
     schedule:
       interval: "weekly"
     cooldown:
-      default-days: 5
+      default-days: 7
     assignees:
       - yamatt
     labels:
