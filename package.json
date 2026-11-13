@@ -8,7 +8,7 @@
   "scripts": {
     "build": "vite build",
     "lint": "eslint .",
-    "check:svelte": "svelte-check --tsconfig ./tsconfig.json",
+    "check:svelte": "svelte-check-native --workspace .",
     "local": "vite",
     "preview": "vite preview"
   },
@@ -18,7 +18,7 @@
     "eslint": "^10.14.0",
     "eslint-plugin-svelte": "^3.24.0",
     "globals": "^17.14.0",
-    "svelte-check": "^4.7.8",
+    "svelte-check-native": "^1.11.1",
     "typescript": "^7.0.2",
     "vite": "^8.3.5"
   }
