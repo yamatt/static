@@ -37,6 +37,11 @@ export default class YouTube {
     this.state = State.PLAYING;
   }
 
+  pause() {
+    this.post_message('pauseVideo')
+    this.state = State.STOPPED;
+  }
+
   stop() {
     this.post_message('stopVideo')
     this.state = State.STOPPED;

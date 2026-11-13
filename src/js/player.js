@@ -98,7 +98,7 @@ export default class Player {
   }
 
   pause() {
-    this.source.stop();
+    this.source.pause();
   }
 
   play() {
@@ -111,7 +111,7 @@ export default class Player {
     }
 
     if (this.source.state == State.PLAYING) {
-      this.source.stop();
+      this.source.pause();
       return;
     }
     else if (this.source.state == State.STOPPED) {
