@@ -16,11 +16,11 @@
     "@eslint/js": "^10.0.1",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "eslint": "^10.14.0",
-    "eslint-plugin-svelte": "^3.24.0",
+    "eslint-plugin-svelte": "^3.24.1",
     "globals": "^17.14.0",
     "svelte-check-native": "^1.11.1",
     "typescript": "^7.0.2",
-    "vite": "^8.3.5"
+    "vite": "^8.3.8"
   },
   "overrides": {
     "minimatch": "11.0.1"
