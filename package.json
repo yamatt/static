@@ -3,7 +3,7 @@
     "node": ">=26.0.0 <27.0.0"
   },
   "dependencies": {
-    "svelte": "^5.0.0"
+    "svelte": "^5.58.0"
   },
   "scripts": {
     "build": "vite build",
@@ -15,10 +15,10 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
-    "eslint": "^10.14.0",
+    "eslint": "^10.15.0",
     "eslint-plugin-svelte": "^3.24.1",
     "globals": "^17.14.0",
-    "svelte-check-native": "^1.11.1",
+    "svelte-check-native": "^1.12.1",
     "typescript": "^7.0.2",
     "vite": "^8.3.8"
   },
